@@ -1,0 +1,113 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 222 84% 4%;
+    --foreground: 210 40% 98%;
+    --card: 217 33% 17%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222 84% 4%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 48 96% 51%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 217 33% 27%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217 33% 27%;
+    --muted-foreground: 210 40% 58%;
+    --accent: 12 65% 51%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217 33% 27%;
+    --input: 217 33% 27%;
+    --ring: 48 96% 51%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222 84% 4%;
+    --foreground: 210 40% 98%;
+    --card: 217 33% 17%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222 84% 4%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 48 96% 51%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 217 33% 27%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217 33% 27%;
+    --muted-foreground: 210 40% 58%;
+    --accent: 12 65% 51%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217 33% 27%;
+    --input: 217 33% 27%;
+    --ring: 48 96% 51%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .cell-clearing {
+    animation: flash 0.5s ease-out;
+  }
+  .text-stroke {
+    -webkit-text-stroke: 1px #a2620c; /* For Webkit browsers */
+    text-stroke: 1px #a2620c;
+  }
+  .text-shadow-custom {
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  }
+  .animate-title-shine {
+    animation: title-shine 4s infinite;
+    background: linear-gradient(90deg, #fff, #fff, #fff, #fefce8, #fff, #fff, #fff);
+    background-size: 300% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes flash {
+  0%, 100% {
+    background-color: hsl(var(--primary));
+    transform: scale(1);
+  }
+  50% {
+    background-color: hsl(var(--primary-foreground));
+    transform: scale(1.1);
+  }
+}
+
+@keyframes title-shine {
+    0% { background-position: 150% 50%; }
+    100% { background-position: -150% 50%; }
+}
